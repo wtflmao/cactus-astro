@@ -21,4 +21,6 @@ pnpm-debug.log*
 .DS_Store
 
 .vscode
-
+.wrangler
+wrangler.jsonc
+wrangler.toml

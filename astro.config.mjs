@@ -3,8 +3,11 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightThemeRapide from 'starlight-theme-rapide'
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
+	output: 'server',
 	site: "https://cactus.hhzm.win",
 	integrations: [
 		starlight({
@@ -45,4 +48,9 @@ export default defineConfig({
 			],
 		}),
 	],
+	adapter: cloudflare({
+		platformProxy: { enabled: true },
+		sessionKVBindingName: 'cactus',
+		cloudflareModules: true
+	}),
 });
