@@ -23,7 +23,7 @@ export default defineConfig({
 			components: {
 				LastUpdated: './src/components/LastUpdated.astro',
 			},
-			defaultLocale: 'en',
+			defaultLocale: 'zh-cn',
 			locales: {
 				'en': {
 					label: 'English',
