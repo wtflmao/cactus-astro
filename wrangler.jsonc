@@ -1,0 +1,24 @@
+{
+    "kv_namespaces": [{
+        "binding": "cactus",
+        "id": "af3aa29570d745368580b230890152f8"
+    }],
+    "name": "cactus",
+    "compatibility_date": "2025-08-04",
+    "compatibility_flags": ["nodejs_compat"],
+    "assets": {
+        "binding": "ASSETS",
+        "directory": "./dist"
+    },
+    "main": "./dist/_worker.js/index.js",
+    "observability": {
+        "enabled": true
+    },
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "routes": [
+    {
+      "pattern": "cactus.hhzm.win",
+      "custom_domain": true
+    }
+  ]
+}
