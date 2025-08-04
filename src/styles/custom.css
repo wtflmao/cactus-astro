@@ -1,0 +1,31 @@
+/* Custom styles for language selector */
+starlight-lang-select select {
+  min-width: 65px !important;
+  width: auto !important;
+}
+
+/* Ensure the language selector dropdown has enough width */
+starlight-lang-select {
+  min-width: 65px !important;
+}
+
+/* Fix for language selector button */
+starlight-lang-select button {
+  min-width: 65px !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+}
+
+/* Language selector dropdown menu */
+starlight-lang-select [role="listbox"] {
+  min-width: 65px !important;
+}
+
+/* Language option items */
+starlight-lang-select [role="option"] {
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  padding: 0.5rem 1rem !important;
+}

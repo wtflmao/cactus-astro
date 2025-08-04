@@ -1,0 +1,54 @@
+---
+const { lang } = Astro.locals.starlightRoute;
+const { entry } = Astro.locals.starlightRoute;
+
+// use custom time field first, otherwise fallback to standard lastUpdated
+const customTime = entry.data.time;
+const standardLastUpdated = Astro.locals.starlightRoute.lastUpdated;
+
+let displayDate: Date | undefined;
+let dateSource: 'custom' | 'standard' | undefined;
+
+if (customTime) {
+  // handle custom time field (support string or date type)
+  try {
+    if (customTime instanceof Date) {
+      // if it is already a Date object, use it directly
+      displayDate = customTime;
+      dateSource = 'custom';
+    } else {
+      // if it is a string, try to parse it
+      displayDate = new Date(customTime);
+      // verify if the date is valid
+      if (isNaN(displayDate.getTime())) {
+        console.warn(`Invalid date format in frontmatter time field: ${customTime}`);
+        displayDate = standardLastUpdated;
+        dateSource = 'standard';
+      } else {
+        dateSource = 'custom';
+      }
+    }
+  } catch (error) {
+    console.warn(`Error parsing frontmatter time field: ${customTime}`, error);
+    displayDate = standardLastUpdated;
+    dateSource = 'standard';
+  }
+} else if (standardLastUpdated) {
+  displayDate = standardLastUpdated;
+  dateSource = 'standard';
+}
+---
+
+{
+  displayDate && (
+    <p>
+      {Astro.locals.t('page.lastUpdated')}{' '}
+      <time datetime={displayDate.toISOString()}>
+        {displayDate.toLocaleDateString(lang, { 
+          dateStyle: 'medium', 
+          timeZone: 'UTC' 
+        })}
+      </time>
+    </p>
+  )
+}
