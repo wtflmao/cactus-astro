@@ -13,6 +13,8 @@
     "@astrojs/cloudflare": "^12.6.2",
     "@astrojs/starlight": "^0.35.2",
     "astro": "^5.6.1",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
     "sharp": "^0.34.2",
     "starlight-theme-rapide": "^0.5.1",
     "wrangler": "^4.27.0"

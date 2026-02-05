@@ -1,3 +1,18 @@
+/* KaTeX CSS for math rendering */
+@import "katex/dist/katex.min.css";
+
+/* Math formula styling to match Starlight theme */
+.katex {
+  font-size: 1.1em;
+}
+
+/* Block math (display mode) centering and spacing */
+.katex-display {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 /* Custom styles for language selector */
 starlight-lang-select select {
   min-width: 65px !important;
