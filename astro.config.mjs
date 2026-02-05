@@ -45,6 +45,15 @@ export default defineConfig({
 					},
 					autogenerate: { directory: 'topics' },
 				},
+				{
+					label: '',
+					translations: {
+						'en': 'Infra',
+						'zh-cn': '基础设施',
+						'zh-CN': '基础设施',
+					},
+					autogenerate: { directory: 'infra' },
+				},
 			],
 		}),
 	],
